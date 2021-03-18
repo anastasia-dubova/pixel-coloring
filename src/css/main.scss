@@ -1,0 +1,166 @@
+html {
+	--background-color: #061639;
+	--container-color: #f5f5f5;
+	--border-color: #bcc3c4;
+}
+
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+body {
+	background-color: var(--background-color);
+}
+
+.container {
+	width: 90%;
+	height: 100vh;
+	margin: auto;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.counter {
+	display: flex;
+	align-items: center;
+
+	height: 60px;
+	&__caption {
+		font-size: 24px;
+		color: #08e8de;
+		text-align: center;
+	}
+}
+
+.pixel__container {
+	margin: auto;
+	display: flex;
+	flex-direction: row;
+	overflow: auto;
+
+	width: 100%;
+	height: 90%;
+
+	border: 3px solid var(--border-color);
+	background-color: var(--container-color);
+}
+
+.palette {
+	align-self: start;
+	order: 0;
+	&__container {
+		display: flex;
+		flex-direction: column;
+
+		height: 100%;
+		outline: 3px solid var(--border-color);
+	}
+	&__item {
+		width: 40px;
+		height: 40px;
+		border: 3px solid var(--border-color);
+
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		cursor: pointer;
+	}
+}
+
+@media (max-width: 768px) {
+	.pixel__container {
+		flex-direction: column;
+	}
+
+	.palette {
+		order: 2;
+		&__container {
+			display: flex;
+			flex-direction: row;
+		}
+	}
+}
+
+#srcCanvas {
+	display: none;
+	width: 100%;
+	height: 100%;
+}
+
+.canvas {
+	&__container {
+		min-height: 0;
+		max-height: 100%;
+		margin: auto;
+		overflow: auto;
+		outline: 1px solid #ccc;
+
+	}
+	&__image {
+		margin: 0 auto;
+		outline: 3px solid var(--border-color);
+		background-color: #ccc;
+
+		display: flex;
+		flex-flow: row wrap;
+	}
+}
+
+.item {
+	&--eraser {
+		border: 3px solid #ff00ff;
+	}
+	&--selected {
+		border: 3px solid #08e8de;
+	}
+}
+
+.cell {
+	outline: 1px solid var(--border-color);
+
+	text-align: center;
+	color: var(--border-color);
+}
+
+.modal {
+	visibility: visible;
+	position: fixed;
+	background-color: rgba(0, 0, 0, .7);/*transparent;*/
+	overflow: auto;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	&.hidden {
+		visibility: hidden;
+	}
+	&__container {
+		width: 90%;
+		height: 90%;
+		overflow: auto;
+		background-color: #fff;
+
+		display: flex;
+		flex-flow: row wrap;
+		align-items: center;
+
+		& div {
+			width: 29.333%;
+			height: 29.333%;
+			margin: 2%;
+
+			background-size: contain;
+			background-repeat: no-repeat;
+			background-position: center;
+		}
+	}
+}

@@ -1,0 +1,13 @@
+export const COLORS_COUNT = 10
+export const FIELD_SIZE = 100
+export const CELL_SIZE = 48
+export const APP_SELECTOR = '.canvas__image'
+export const CANVAS_SELECTOR = '.canvas__container'
+export const COUNTER = '.counter__caption'
+export const MODAL_SELECTOR = '.modal__container'
+export const PALETTE_CONTAINER_SELECTOR = '.palette__container'
+export const PALETTE_ITEM_CLASS = 'palette__item'
+export const PALETTE_ITEM_SELECTED = 'item--selected'
+export const PALETTE_ITEM_ERASER = 'item--eraser'
+export const DEFAULT_CELL_COLOR = 0xCCCCCC
+export const DEFAULT_BORDER_COLOR = 0xA5A5A5
